@@ -1,0 +1,54 @@
+# Project: StaticJump
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+RES      = StaticJump_private.res
+OBJ      = Main.o System.o Game.o NoteMap.o Title.o NoteMapEditor.o Button.o Math.o $(RES)
+LINKOBJ  = Main.o System.o Game.o NoteMap.o Title.o NoteMapEditor.o Button.o Math.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = StaticJump.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Main.o: Main.c
+	$(CC) -c Main.c -o Main.o $(CFLAGS)
+
+System.o: System.c
+	$(CC) -c System.c -o System.o $(CFLAGS)
+
+Game.o: Game.c
+	$(CC) -c Game.c -o Game.o $(CFLAGS)
+
+NoteMap.o: NoteMap.c
+	$(CC) -c NoteMap.c -o NoteMap.o $(CFLAGS)
+
+Title.o: Title.c
+	$(CC) -c Title.c -o Title.o $(CFLAGS)
+
+NoteMapEditor.o: NoteMapEditor.c
+	$(CC) -c NoteMapEditor.c -o NoteMapEditor.o $(CFLAGS)
+
+Button.o: Button.c
+	$(CC) -c Button.c -o Button.o $(CFLAGS)
+
+Math.o: Math.c
+	$(CC) -c Math.c -o Math.o $(CFLAGS)
+
+StaticJump_private.res: StaticJump_private.rc 
+	$(WINDRES) -i StaticJump_private.rc --input-format=rc -o StaticJump_private.res -O coff 
+
