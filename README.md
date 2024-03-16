@@ -1,6 +1,6 @@
 # **Static Jump(스태틱 점프)**
 
-My first C++ Rhythm Game.
+My first C Rhythm Game.
 
 # **Links(링크)**
 
