@@ -2,6 +2,8 @@
 
 My first C Rhythm Game.
 
+[Download(itch.io)](https://d-jangkhtv.itch.io/static-jump)
+
 # **Links(링크)**
 
 * [JkhTV YouTube(장경혁tv)](https://www.youtube.com/channel/UC0lR1aYGgOhFioC3IsazUtw)
